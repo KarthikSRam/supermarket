@@ -90,6 +90,11 @@ window.onload = function() {
       var item = e.target.innerHTML;
       addToShoppingCart(item);
     }
+
+    if(e.target && e.target.matches("img")){
+      var item = e.target.getAttribute("data");
+      addToShoppingCart(item);
+    }
   }
 
 //Testing out to see if it works
@@ -106,6 +111,7 @@ window.onload = function() {
       newListItem.setAttribute("class", "shopping-item");
       var newImage = document.createElement("img");
       newImage.setAttribute("src", currentItem.img);
+      newImage.setAttribute("data", currentItem.name);
       var itemName = document.createElement("p");
       itemName.innerHTML = currentItem.name;
 
