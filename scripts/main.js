@@ -77,11 +77,22 @@ window.onload = function() {
   	}
   ];
 
+//Call the createShoppingMenu() function with appropriate list of items.
   document.querySelector("#cereal").addEventListener("click", function () { createShoppingMenu(cerealItems);});
   document.querySelector("#meats").addEventListener("click", function () { createShoppingMenu(meatItems);});
   document.querySelector("#candy").addEventListener("click", function () { createShoppingMenu(candyItems);});
 
-  //Testing out to see if it works
+//Create event listener that listens for clicks on shopping items.
+  document.querySelector(".menu-images").addEventListener("click", addItemToCart);
+
+  function addItemToCart(e) {
+    if(e.target && e.target.matches("p")){
+      var item = e.target.innerHTML;
+      addToShoppingCart(item);
+    }
+  }
+
+//Testing out to see if it works
   createShoppingMenu(cerealItems);
 
   function createShoppingMenu(menuName){

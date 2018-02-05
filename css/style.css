@@ -16,6 +16,11 @@
   color: white;
 }
 
+.menu-images li {
+  border: 1px solid black;
+  margin: 1em 1em;
+}
+
 .menu-images {
   text-align: center;
 }
