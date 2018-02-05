@@ -8,7 +8,7 @@ window.onload = function() {
   // Cereal items
   var cerealItems = [
   	{
-  		img: './imgs/cereal/cheerios.jpg',
+  		img: 'imgs/cereal/cheerios.jpg',
   		name: 'Cheerios'
   	},
   	{
@@ -32,7 +32,7 @@ window.onload = function() {
   // Meat items
   var meatItems = [
   	{
-  		img: './imgs/meats/pepperoni.jpeg',
+  		img: 'imgs/meats/pepperoni.jpeg',
   		name: 'Pepperoni'
   	},
   	{
@@ -40,7 +40,7 @@ window.onload = function() {
   		name: 'Chicken'
   	},
   	{
-  		img: './imgs/meats/salmon.jpeg',
+  		img: './imgs/meats/salmon.jpg',
   		name: 'Salmon'
   	},
   	{
@@ -76,5 +76,49 @@ window.onload = function() {
   		name: 'Twix'
   	}
   ];
+
+  document.querySelector("#cereal").addEventListener("click", function () { createShoppingMenu(cerealItems);});
+  document.querySelector("#meats").addEventListener("click", function () { createShoppingMenu(meatItems);});
+  document.querySelector("#candy").addEventListener("click", function () { createShoppingMenu(candyItems);});
+
+  //Testing out to see if it works
+  createShoppingMenu(cerealItems);
+
+  function createShoppingMenu(menuName){
+
+    clearShoppingMenu();
+    var menuDiv = document.querySelector(".menu-images");
+    var menuList = document.createElement("ul");
+    for(var i = 0; i < menuName.length; i++){
+      var currentItem = menuName[i];
+      var newListItem = document.createElement("li");
+      newListItem.setAttribute("class", "shopping-item");
+      var newImage = document.createElement("img");
+      newImage.setAttribute("src", currentItem.img);
+      var itemName = document.createElement("p");
+      itemName.innerHTML = currentItem.name;
+
+      newListItem.appendChild(newImage);
+      newListItem.appendChild(itemName);
+      menuList.appendChild(newListItem);
+
+    }
+    menuDiv.appendChild(menuList);
+  }
+
+  function clearShoppingMenu(){
+    //Taken from Stack Overflow (https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript)
+    var myNode = document.querySelector(".menu-images");
+    while (myNode.firstChild) {
+      myNode.removeChild(myNode.firstChild);
+    }
+  };
+
+  function addToShoppingCart(item){
+    var shoppingList = document.querySelector(".shopping-list");
+    var newListItem = document.createElement("li");
+    newListItem.innerHTML = item;
+    shoppingList.appendChild(newListItem);
+  }
 
 }

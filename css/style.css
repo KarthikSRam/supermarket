@@ -1,7 +1,7 @@
 .left-div {
   order: 1;
   flex: 3;
-  background-color: blue;
+  /* background-color: blue; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +17,7 @@
 }
 
 .menu-images {
-
+  text-align: center;
 }
 
 .right-div {
@@ -47,5 +47,14 @@ nav a {
 }
 
 ul {
-  type: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 8em;
+  height: 8em;
+  object-fit: scale-down;
+
 }
