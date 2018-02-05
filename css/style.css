@@ -1,0 +1,47 @@
+.left-div {
+  order: 1;
+  flex: 3;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left-div-header {
+  background-color: #262D3D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: white;
+}
+
+.menu-images {
+
+}
+
+.right-div {
+  order: 1;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body-div {
+  display: flex;
+  /* flex-direction: row; */
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 1em 1.5em;
+}
